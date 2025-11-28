@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RadioBox - Music Player</title>
+</head>
+<body>
+
+<h2>RadioBox - Online Music Player</h2>
+
+<audio id="song1">
+  <source src="C:\Users\Sadhana Sri\Downloads\Anbil Avan Bgm.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="song2">
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playSong('song1')">Play Song 1</button>
+<button onclick="pauseSong('song1')">Pause Song 1</button>
+<br><br>
+<button onclick="playSong('song2')">Play Song 2</button>
+<button onclick="pauseSong('song2')">Pause Song 2</button>
+
+<p id="nowPlaying">Not playing</p>
+
+<script>
+function playSong(id) {
+  var current = document.getElementById(id);
+  current.play();
+  document.getElementById("nowPlaying").innerText = "Playing: " + id;
+}
+
+function pauseSong(id) {
+  var current = document.getElementById(id);
+  current.pause();
+  document.getElementById("nowPlaying").innerText = "Paused: " + id;
+}
+</script>
+
+</body>
+</html>
